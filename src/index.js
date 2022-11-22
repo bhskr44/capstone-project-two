@@ -11,7 +11,7 @@ popupClose.addEventListener('click', () => {
 });
 
 const randomString = (length) => {
-  return 'space';
+  // return 'space';
   let result = '';
   const characters = 'abcdefghijklmnopqrstuvwxyz';
   const charactersLength = characters.length;
@@ -23,16 +23,15 @@ const randomString = (length) => {
 
 const getComments = async (movieId) => {
   const response = await fetch(
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/V9PGHS19NclaPI0zbq7b/comments?item_id=' +
-      movieId
+    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/V9PGHS19NclaPI0zbq7b/comments?item_id=${movieId}`,
   );
-  const myJson = await response.json(); //extract JSON from the http response
+  const myJson = await response.json(); // extract JSON from the http response
 
   return myJson;
 };
 
 const liked = async (movieId) => {
-  let mBody = JSON.parse('{"item_id": ' + movieId + '}');
+  const mBody = JSON.parse(`{"item_id": ${movieId}}`);
   const response = await fetch(
     'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/V9PGHS19NclaPI0zbq7b/likes/',
     {
@@ -41,23 +40,16 @@ const liked = async (movieId) => {
       headers: {
         'Content-Type': 'application/json',
       },
-    }
+    },
   );
-  const myJson = await response; //extract JSON from the http response
+  await response; // extract JSON from the http response
   // do something with myJson
 };
 
 const postComment = async (movieId, name, description) => {
-  let data =
-    '{"item_id": "' +
-    movieId +
-    '", "username": "' +
-    name +
-    '", "comment": "' +
-    description +
-    '"}';
+  const data = `{"item_id": "${movieId}", "username": "${name}", "comment": "${description}"}`;
 
-  let mBody = JSON.parse(data);
+  const mBody = JSON.parse(data);
 
   const response = await fetch(
     'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/V9PGHS19NclaPI0zbq7b/comments/',
@@ -67,17 +59,17 @@ const postComment = async (movieId, name, description) => {
       headers: {
         'Content-Type': 'application/json',
       },
-    }
+    },
   );
-  const myJson = await response; //extract JSON from the http response
+  await response; // extract JSON from the http response
   // do something with myJson
 };
 
-const getLikes = async (movieId) => {
+const getLikes = async () => {
   const response = await fetch(
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/V9PGHS19NclaPI0zbq7b/likes/'
+    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/V9PGHS19NclaPI0zbq7b/likes/',
   );
-  const myJson = await response.json(); //extract JSON from the http response
+  const myJson = await response.json(); // extract JSON from the http response
   localStorage.setItem('likes', JSON.stringify(myJson));
 };
 
@@ -95,7 +87,7 @@ const checkForLikes = (movieId) => {
 
 const loadApi = async () => {
   const response = await fetch(
-    `https://api.tvmaze.com/search/shows?q=${randomString(1)}`
+    `https://api.tvmaze.com/search/shows?q=${randomString(1)}`,
   );
   const myJson = await response.json(); // extract JSON from the http response
 
@@ -106,13 +98,12 @@ const loadApi = async () => {
     let { name } = myJson[i].show;
     const movieId = myJson[i].show.id;
 
-    var like = checkForLikes(movieId);
+    let like = checkForLikes(movieId);
 
     if (name.length > 15) name = `${name.substring(0, 15)}...`;
 
     const image = JSON.stringify(myJson[i].show.image);
-    let imageSrc =
-      'https://static.tvmaze.com/uploads/images/medium_portrait/206/515082.jpg';
+    let imageSrc = 'https://static.tvmaze.com/uploads/images/medium_portrait/206/515082.jpg';
 
     if (image !== 'null') {
       imageSrc = myJson[i].show.image.medium;
@@ -155,13 +146,12 @@ const loadApi = async () => {
         btn.classList.toggle('fa-regular');
         btn.classList.toggle('fa-solid');
         if (btn.classList.contains('fa-solid')) {
-          like = like + 1;
-          const likes = document.getElementById('_' + e.target.id);
+          like += 1;
+          const likes = document.getElementById(`_${e.target.id}`);
 
           likes.innerHTML = like;
 
           liked(e.target.id);
-        } else {
         }
       });
     });
@@ -169,16 +159,15 @@ const loadApi = async () => {
 };
 
 const getMovieDetails = async (movieId) => {
-  const response = await fetch('https://api.tvmaze.com/shows/' + movieId);
-  const movieDetails = await response.json(); //extract JSON from the http response
+  const response = await fetch(`https://api.tvmaze.com/shows/${movieId}`);
+  const movieDetails = await response.json(); // extract JSON from the http response
   // do something with myJson
   const popupContainer = document.querySelector('.popup-container');
-  let movieName = movieDetails.name;
-  let summary = movieDetails.summary;
-  let image = movieDetails.image;
+  const movieName = movieDetails.name;
+  const { summary } = movieDetails;
+  const { image } = movieDetails;
 
-  let imageSrc =
-    'https://static.tvmaze.com/uploads/images/original_untouched/53/133615.jpg';
+  let imageSrc = 'https://static.tvmaze.com/uploads/images/original_untouched/53/133615.jpg';
 
   if (image !== 'null') {
     if (image.original !== 'null') {
@@ -187,31 +176,22 @@ const getMovieDetails = async (movieId) => {
       imageSrc = movieDetails.image.medium;
     }
   }
-  let comments = await getComments(movieId);
+  const comments = await getComments(movieId);
 
-  let firstPart =
-    `
+  const firstPart = `
     <div class="popup-movie-banner">
           <img
             class="popup-movie-banner-img"
-            src="` +
-    imageSrc +
-    `"
-            alt="` +
-    movieName +
-    ` Banner"
+            src="${imageSrc}"
+            alt="${movieName} Banner"
           />
         </div>
         <div class="popup-details">
           <div class="popup-title">
-            <h2>` +
-    movieName +
-    `</h2>
+            <h2>${movieName}</h2>
           </div>
           <div class="popup-description">
-            ` +
-    summary +
-    `
+            ${summary}
           </div>
 
           <div class="popup-comments">
@@ -222,19 +202,12 @@ const getMovieDetails = async (movieId) => {
               <ul class="comment-description">
               `;
 
-  let commentList = ``;
+  let commentList = '';
   for (let k = 0; k < comments.length; k += 1) {
-    let temp =
-      `<li>` +
-      comments[k]['creation_date'] +
-      ` ` +
-      comments[k]['username'] +
-      `: ` +
-      comments[k]['comment'] +
-      `</li>`;
+    const temp = `<li>${comments[k].creation_date} ${comments[k].username}: ${comments[k].comment}</li>`;
     commentList += temp;
   }
-  let secondPart = `
+  const secondPart = `
               </ul>
             </div>
           </div>
