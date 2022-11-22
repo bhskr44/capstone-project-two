@@ -10,11 +10,11 @@ popupClose.addEventListener('click', () => {
   popup.classList.add('hide');
 });
 
-let randomString = (length) => {
-  var result = '';
-  var characters = 'abcdefghijklmnopqrstuvwxyz';
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
+const randomString = (length) => {
+  let result = '';
+  const characters = 'abcdefghijklmnopqrstuvwxyz';
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i += 1) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
@@ -22,43 +22,37 @@ let randomString = (length) => {
 
 const loadApi = async () => {
   const response = await fetch(
-    'https://api.tvmaze.com/search/shows?q=' + randomString(1)
+    `https://api.tvmaze.com/search/shows?q=${randomString(1)}`,
   );
-  const myJson = await response.json(); //extract JSON from the http response
+  const myJson = await response.json(); // extract JSON from the http response
 
-  //Add the total number of movies to the DOM
-  totalMovies.insertAdjacentHTML('afterend', '(' + myJson.length + ')');
+  // Add the total number of movies to the DOM
+  totalMovies.insertAdjacentHTML('afterend', `(${myJson.length})`);
 
   for (let i = 0; i < myJson.length; i += 1) {
-    let name = myJson[i].show.name;
-    let movieId = myJson[i].show.id;
-    if (name.length > 15) name = name.substring(0, 15) + '...';
+    let { name } = myJson[i].show;
+    const movieId = myJson[i].show.id;
+    if (name.length > 15) name = `${name.substring(0, 15)}...`;
 
-    let image = JSON.stringify(myJson[i].show.image);
-    let imageSrc =
-      'https://static.tvmaze.com/uploads/images/medium_portrait/206/515082.jpg';
+    const image = JSON.stringify(myJson[i].show.image);
+    let imageSrc = 'https://static.tvmaze.com/uploads/images/medium_portrait/206/515082.jpg';
 
     if (image !== 'null') {
       imageSrc = myJson[i].show.image.medium;
     }
 
-    showMovies.innerHTML +=
-      `
+    showMovies.innerHTML += `
   <!-- Single Movie Banner -->
   <div class="single-movies card">
     <div class="movie-banner">
       <img
         class="movie-banner-img"
-        src="` +
-      imageSrc +
-      `"
+        src="${imageSrc}"
         alt="movieName"
       />
     </div>
     <div class="title-rection">
-      <h3 id="title">` +
-      name +
-      `</h3>
+      <h3 id="title">${name}</h3>
       <i class="fa-regular fa-heart"></i>
     </div>
     <div class="movie-likes">
@@ -66,15 +60,11 @@ const loadApi = async () => {
     </div>
     <div class="action-btns">
     <form class="submit-btns postReservation">
-      <input type="hidden" value="` +
-      movieId +
-      `" id="movieId">
+      <input type="hidden" value="${movieId}" id="movieId">
       <button class="btn btn-secondary">Reservations</button>
       </form>
       <form class="submit-btns postComment">
-      <input type="hidden" value="` +
-      movieId +
-      `" id="movieId">
+      <input type="hidden" value="${movieId}" id="movieId">
       <button class="btn btn-primary">Comments</button>
       </form>
     </div>
@@ -85,3 +75,13 @@ const loadApi = async () => {
 };
 
 loadApi();
+setTimeout(() => {
+  const postComment = document.querySelectorAll('.postComment');
+  postComment.forEach((submitButton) => {
+    submitButton.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      popup.classList.remove('hide');
+    });
+  });
+}, 1000);
