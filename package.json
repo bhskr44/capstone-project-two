@@ -33,5 +33,8 @@
   "dependencies": {
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.6.1"
+  },
+  "devServer": {
+    "host": "127.0.0.1"
   }
 }
