@@ -1,0 +1,167 @@
+:root {
+  --color-primary: #ffe3b0;
+  --color-secondary: black;
+  --color-tertiary: white;
+  --color-font: white;
+}
+
+body {
+  background-color: var(--color-secondary);
+  color: var(--color-font);
+}
+
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+nav {
+  list-style-type: none;
+  display: flex;
+  background-color: var(--color-secondary);
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+
+.logo p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.navigation {
+  list-style-type: none;
+  display: flex;
+}
+
+.navigation li {
+  margin: 0 1rem;
+}
+
+.navigation li a {
+  text-decoration: none;
+  color: var(--color-font);
+}
+
+.navigation li:hover {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.active {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+main {
+  margin-top: 5rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px 1px grey;
+}
+
+.single-movies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+
+.title-rection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.movie-banner-img {
+  width: 100%;
+  height: 370px;
+  border-radius: 5px;
+}
+
+.movie-banner {
+  width: 100%;
+  border-radius: 5px;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 5px;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.movie-likes p {
+  margin: 0;
+  padding: 10px 0 10px 0;
+  width: 100%;
+  text-align: right;
+}
+
+.movie-likes {
+  margin: 0;
+  padding: 0 0 10px 0;
+  width: 100%;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
