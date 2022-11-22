@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MicroFlix</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <p>MicroFlix</p>
+          </div>
+          <ul class="navigation">
+            <li class="active">
+              <a href="#">Home <span id="totalMovies"></span></a>
+            </li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">My List</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row" id="show-movies"></div>
+      </div>
+    </main>
+    <footer>
+      <div class="container footer-section">
+        <p>Created by Team Alpha under MIT License</p>
+      </div>
+    </footer>
+
+    <section class="popup popup-comments hide">
+      <div class="popup-header">
+        <i id="popup-close" class="fa-solid fa-xmark fa-2x"></i>
+      </div>
+      <div class="popup-container">
+        <div class="popup-movie-banner">
+          <img
+            class="popup-movie-banner-img"
+            src="https://static.tvmaze.com/uploads/images/original_untouched/53/133615.jpg"
+            alt="Movie Banner"
+          />
+        </div>
+        <div class="popup-details">
+          <div class="popup-title">
+            <h2>MythBusters Jr</h2>
+          </div>
+          <div class="popup-description">
+            <p>
+              For the ten-episode series Adam Savage has teamed-up with six of
+              the nation's leading young ‘makers', robotics wizzes, builders,
+              and inventors, all under the age of 16, who show off their amazing
+              ingenuity and STEAM (Science, Technology, Engineering, Arts, and
+              Math) skills.
+            </p>
+            <p>
+              Together, they tackle myths just like those seen in the popular
+              Emmy® nominated television series <i>MythBusters</i>, ranging from
+              driving, explosions, movies, popular culture and more. From
+              building a fire extinguisher jetpack, to dominos big enough to
+              crush a car, and testing myths from the Oscar®-winning big screen
+              pic <i>Gravity </i>and TV's <i>Breaking Bad</i>, it's an
+              action-packed season.
+            </p>
+          </div>
+
+          <div class="popup-comments">
+            <h2 class="popup-comments-title">
+              Comments<span id="commentConter"></span>
+            </h2>
+            <div class="popu-comments-container">
+              <ul class="comment-description">
+                <li class="comments-received">03/11/2021 Alex: I'd love to buy it!</li>
+                <li>03/11/2021 Alex: I'd love to buy it!</li>
+                <li>03/11/2021 Alex: I'd love to buy it!</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="add-comment-form">
+            <h2 class="popup-comments-title">
+              Add Comments<span id="addCOmment"></span>
+            </h2>
+            <form>
+              <input type="text" placeholder="Name" name="name" />
+              <textarea
+                name="comment"
+                id="comment"
+                cols="30"
+                rows="8"
+                placeholder="Comment"
+                name="comment"
+              >
+              </textarea>
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
