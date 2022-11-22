@@ -1,1 +1,3 @@
-https://api.tvmaze.com/search/shows?q=space
+https://api.tvmaze.com/search/shows?q=<search-term>
+
+https://api.tvmaze.com/shows/<show-id>
