@@ -1,0 +1,19 @@
+/*!*********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/style.css ***!
+  \*********************************************************************/
+:root {
+  --color-primary: #ffe3b0;
+  --color-secondary: black;
+  --color-tertiary: white;
+  --color-font: grey;
+}
+
+body {
+  background-color: var(--color-secondary);
+  color: var(--color-font);
+}
+
+.navigation  {
+  list-style-type: none;
+  display: flex;
+}
