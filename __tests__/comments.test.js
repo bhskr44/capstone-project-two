@@ -1,4 +1,4 @@
-import getComments from './../src/module/__mocks__/comments';
+import getComments from '../src/module/__mocks__/comments';
 
 describe('Add tests for comments counter', () => {
   it('Three Comments in a movie - Output: 3', async () => {
