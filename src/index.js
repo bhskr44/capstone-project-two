@@ -1,4 +1,6 @@
 import './css/style.css';
+import { getComments } from '../module/comments';
+import { liked } from '../module/liked';
 // import logo from './images/logo.png';
 
 const showMovies = document.querySelector('#show-movies');
@@ -19,31 +21,6 @@ const randomString = (length) => {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
   }
   return result;
-};
-
-const getComments = async (movieId) => {
-  const response = await fetch(
-    `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/V9PGHS19NclaPI0zbq7b/comments?item_id=${movieId}`,
-  );
-  const myJson = await response.json(); // extract JSON from the http response
-
-  return myJson;
-};
-
-const liked = async (movieId) => {
-  const mBody = JSON.parse(`{"item_id": ${movieId}}`);
-  const response = await fetch(
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/V9PGHS19NclaPI0zbq7b/likes/',
-    {
-      method: 'POST',
-      body: JSON.stringify(mBody),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    },
-  );
-  await response; // extract JSON from the http response
-  // do something with myJson
 };
 
 const postComment = async (movieId, name, description) => {
