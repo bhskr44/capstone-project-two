@@ -1,6 +1,6 @@
-import postComment from './postComment';
-import { getComments } from './comments';
 import Swal from 'sweetalert2';
+import postComment from './postComment';
+import getComments from './comments';
 
 const getMovieDetails = async (movieId) => {
   const response = await fetch(`https://api.tvmaze.com/shows/${movieId}`);
@@ -11,8 +11,7 @@ const getMovieDetails = async (movieId) => {
   const { summary } = movieDetails;
   const { image } = movieDetails;
 
-  let imageSrc =
-    'https://static.tvmaze.com/uploads/images/original_untouched/53/133615.jpg';
+  let imageSrc = 'https://static.tvmaze.com/uploads/images/original_untouched/53/133615.jpg';
 
   if (image !== 'null') {
     if (image.original !== 'null') {

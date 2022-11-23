@@ -11,7 +11,7 @@ const postComment = async (movieId, name, description) => {
       headers: {
         'Content-Type': 'application/json',
       },
-    }
+    },
   );
   await response; // extract JSON from the http response
   // do something with myJson

@@ -5,7 +5,7 @@ import postCommentMethod from './module/postCommentMethod';
 
 getLikes();
 
-let inSync = new Promise((resolve, reject) => {
+const inSync = new Promise((resolve) => {
   loadApi();
   setTimeout(() => {
     resolve('done');
