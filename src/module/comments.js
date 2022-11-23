@@ -6,4 +6,3 @@ export const getComments = async (movieId) => {
 
   return myJson;
 };
-getComments();
