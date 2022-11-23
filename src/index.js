@@ -9,7 +9,7 @@ const inSync = new Promise((resolve) => {
   loadApi();
   setTimeout(() => {
     resolve('done');
-  }, 500);
+  }, 300);
 });
 
 inSync.then(() => {
