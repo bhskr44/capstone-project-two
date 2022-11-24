@@ -4,7 +4,7 @@ import liked from './liked';
 
 const loadApi = async () => {
   const response = await fetch(
-    `https://api.tvmaze.com/search/shows?q=${randomString(1)}`
+    `https://api.tvmaze.com/search/shows?q=${randomString(1)}`,
   );
   const myJson = await response.json(); // extract JSON from the http response
 
@@ -24,8 +24,7 @@ const loadApi = async () => {
     if (name.length > 15) name = `${name.substring(0, 15)}...`;
 
     const image = JSON.stringify(myJson[i].show.image);
-    let imageSrc =
-      'https://static.tvmaze.com/uploads/images/medium_portrait/206/515082.jpg';
+    let imageSrc = 'https://static.tvmaze.com/uploads/images/medium_portrait/206/515082.jpg';
 
     if (image !== 'null') {
       imageSrc = myJson[i].show.image.medium;
