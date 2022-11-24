@@ -19,7 +19,7 @@ const loadApi = async () => {
     let { name } = myJson[i].show;
     const movieId = myJson[i].show.id;
 
-    let like = checkForLikes(movieId);
+    const like = checkForLikes(movieId);
 
     if (name.length > 15) name = `${name.substring(0, 15)}...`;
 
@@ -62,7 +62,24 @@ const loadApi = async () => {
     <!-- Single Movie Banner End-->
   `;
 
+<<<<<<< Updated upstream
     
+=======
+    const likeBtn = document.querySelectorAll('.liked_btn');
+    likeBtn.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        btn.classList.toggle('fa-regular');
+        btn.classList.toggle('fa-solid');
+        if (btn.classList.contains('fa-solid')) {
+          const likes = document.getElementById(`_${e.target.id}`);
+          let currentLike = Number(likes.innerHTML);
+          currentLike += 1;
+          likes.innerHTML = currentLike;
+          liked(e.target.id);
+        }
+      });
+    });
+>>>>>>> Stashed changes
   }
 };
 
