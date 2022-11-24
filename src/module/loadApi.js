@@ -19,7 +19,7 @@ const loadApi = async () => {
     let { name } = myJson[i].show;
     const movieId = myJson[i].show.id;
 
-    let like = checkForLikes(movieId);
+    const like = checkForLikes(movieId);
 
     if (name.length > 15) name = `${name.substring(0, 15)}...`;
 
@@ -67,9 +67,10 @@ const loadApi = async () => {
         btn.classList.toggle('fa-regular');
         btn.classList.toggle('fa-solid');
         if (btn.classList.contains('fa-solid')) {
-          like += 1;
           const likes = document.getElementById(`_${e.target.id}`);
-          likes.innerHTML = like;
+          let currentLike = Number(likes.innerHTML);
+          currentLike += 1;
+          likes.innerHTML = currentLike;
           liked(e.target.id);
         }
       });
