@@ -2,7 +2,7 @@
 
 # MicroFlix
 
-> This is a demo project illustrating a movie app. The app list out the movies that one can comment on it and like it.
+> This is a demo project illustrating a movie app. The app list out the movies that one can comment on it and like it. It loads diffrent movies eaach time the user reloads the page.
 
 ## Built With
 
@@ -49,39 +49,39 @@ For making any changes to the project the clone the project-
 
 - Folder Structure
 
-    ``` 
-    __tests__
+  ```
+  __tests__
 
-    dist
+  dist
 
-    src
-      css
-       style.css  //Responsible for all the stylings
+  src
+    css
+     style.css  //Responsible for all the stylings
 
-      module
-        __mocks__
-            comments.js //jest mocks
-            loadApijs   //jest mocks
+    module
+      __mocks__
+          comments.js //jest mocks
+          loadApijs   //jest mocks
 
-        checkForLikes.js
-        comments.js
-        getLikes.js
-        getMovieDetails.js
-        liked.js
-        loadApijs
-        postComment.js
-        postCommentMethod.js
-        randomString.js
+      checkForLikes.js
+      comments.js
+      getLikes.js
+      getMovieDetails.js
+      liked.js
+      loadApijs
+      postComment.js
+      postCommentMethod.js
+      randomString.js
 
-      index.html    //main HTML File 
-      index.js      //main js File 
+    index.html    //main HTML File
+    index.js      //main js File
 
-    webpack.config.js
+  webpack.config.js
 
-    package.json
+  package.json
 
-    babel.config.js
-    ```
+  babel.config.js
+  ```
 
 ### Run tests
 
