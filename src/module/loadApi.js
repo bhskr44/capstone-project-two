@@ -4,7 +4,7 @@ import liked from './liked';
 
 const loadApi = async () => {
   const response = await fetch(
-    `https://api.tvmaze.com/search/shows?q=${randomString(1)}`,
+    `https://api.tvmaze.com/search/shows?q=${randomString(1)}`
   );
   const myJson = await response.json(); // extract JSON from the http response
 
@@ -24,7 +24,8 @@ const loadApi = async () => {
     if (name.length > 15) name = `${name.substring(0, 15)}...`;
 
     const image = JSON.stringify(myJson[i].show.image);
-    let imageSrc = 'https://static.tvmaze.com/uploads/images/medium_portrait/206/515082.jpg';
+    let imageSrc =
+      'https://static.tvmaze.com/uploads/images/medium_portrait/206/515082.jpg';
 
     if (image !== 'null') {
       imageSrc = myJson[i].show.image.medium;
@@ -61,19 +62,7 @@ const loadApi = async () => {
     <!-- Single Movie Banner End-->
   `;
 
-    const likeBtn = document.querySelectorAll('.liked_btn');
-    likeBtn.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        btn.classList.toggle('fa-regular');
-        btn.classList.toggle('fa-solid');
-        if (btn.classList.contains('fa-solid')) {
-          like += 1;
-          const likes = document.getElementById(`_${e.target.id}`);
-          likes.innerHTML = like;
-          liked(e.target.id);
-        }
-      });
-    });
+    
   }
 };
 
