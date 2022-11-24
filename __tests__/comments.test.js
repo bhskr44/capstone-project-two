@@ -12,7 +12,7 @@ describe('Add tests for comments counter', () => {
   });
 
   it('One Comments in a movie - Output: 1', async () => {
-    const commentsNumber = await getComments(19678); // Run the function
+    const commentsNumber = await getComments(36306); // Run the function
     expect(commentsNumber.length).toEqual(1); // Make an assertion on the result
   });
 });

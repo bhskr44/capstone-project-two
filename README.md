@@ -14,6 +14,8 @@
 
 [Live Demo Link](https://bhskr44.github.io/capstone-project-two/dist)
 
+[Watch Video on Youtube](https://youtu.be/F_uyYbQIPkA)
+
 ## Getting Started
 
 **This is an example of how you may give instructions on setting up your project locally.**
