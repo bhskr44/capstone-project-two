@@ -55,7 +55,68 @@
         <i id="popup-close" class="fa-solid fa-xmark fa-2x"></i>
       </div>
       <div class="popup-container">
-        
+        <div class="popup-movie-banner">
+          <img
+            class="popup-movie-banner-img"
+            src="https://static.tvmaze.com/uploads/images/original_untouched/53/133615.jpg"
+            alt="Movie Banner"
+          />
+        </div>
+        <div class="popup-details">
+          <div class="popup-title">
+            <h2>MythBusters Jr</h2>
+          </div>
+          <div class="popup-description">
+            <p>
+              For the ten-episode series Adam Savage has teamed-up with six of
+              the nation's leading young ‘makers', robotics wizzes, builders,
+              and inventors, all under the age of 16, who show off their amazing
+              ingenuity and STEAM (Science, Technology, Engineering, Arts, and
+              Math) skills.
+            </p>
+            <p>
+              Together, they tackle myths just like those seen in the popular
+              Emmy® nominated television series <i>MythBusters</i>, ranging from
+              driving, explosions, movies, popular culture and more. From
+              building a fire extinguisher jetpack, to dominos big enough to
+              crush a car, and testing myths from the Oscar®-winning big screen
+              pic <i>Gravity </i>and TV's <i>Breaking Bad</i>, it's an
+              action-packed season.
+            </p>
+          </div>
+
+          <div class="popup-comments">
+            <h2 class="popup-comments-title">
+              Comments<span id="commentConter"></span>
+            </h2>
+            <div class="popu-comments-container">
+              <ul class="comment-description">
+                <li class="comments-received">03/11/2021 Alex: I'd love to buy it!</li>
+                <li>03/11/2021 Alex: I'd love to buy it!</li>
+                <li>03/11/2021 Alex: I'd love to buy it!</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="add-comment-form">
+            <h2 class="popup-comments-title">
+              Add Comments<span id="addCOmment"></span>
+            </h2>
+            <form>
+              <input type="text" placeholder="Name" name="name" />
+              <textarea
+                name="comment"
+                id="comment"
+                cols="30"
+                rows="8"
+                placeholder="Comment"
+                name="comment"
+              >
+              </textarea>
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+        </div>
       </div>
     </section>
     <script type="module" src="./index.js"></script>
