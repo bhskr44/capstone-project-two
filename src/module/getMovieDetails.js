@@ -11,8 +11,7 @@ const getMovieDetails = async (movieId) => {
   const { summary } = movieDetails;
   const { image } = movieDetails;
 
-  let imageSrc =
-    'https://static.tvmaze.com/uploads/images/original_untouched/53/133615.jpg';
+  let imageSrc = 'https://static.tvmaze.com/uploads/images/original_untouched/53/133615.jpg';
 
   if (image !== 'null') {
     if (image.original !== 'null') {
@@ -98,13 +97,13 @@ const getMovieDetails = async (movieId) => {
       icon: 'success',
       confirmButtonText: 'Cool',
     });
-    let d = new Date();
+    const d = new Date();
     const commentDescription = document.querySelector('.comment-description');
     const commentConter = document.querySelector('#totalComment');
 
-    let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
-    let mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d);
-    let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+    const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+    const mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d);
+    const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
     commentDescription.innerHTML += `<li>${ye}-${mo}-${da} ${name}: ${comment}</li>`;
     commentConter.innerHTML = Number(commentConter.innerHTML) + 1;
   });

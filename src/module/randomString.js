@@ -1,5 +1,5 @@
 // const randomString = () => 'p';
-//Code to be Used in the Future
+// Code to be Used in the Future
 const randomString = (length) => {
   let result = '';
   const characters = 'abcdefghijklmnopqrstuvwxyz';
