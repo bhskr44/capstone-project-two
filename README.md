@@ -18,9 +18,17 @@
 
 [Kanban Board](https://github.com/users/bhskr44/projects/6)
 
+-Presentation
+
 [Robert's Video Presentation](https://drive.google.com/file/d/1AOAM8HScByekaXrytc2rthQEukjqqzwp/view?usp=sharing)
 
 [Bhaskar's Video Presentation](https://youtu.be/w4szCFomXFA)
+
+-Code Review
+
+[Bhaskar's Code Review](https://github.com/bhskr44/capstone-project-two/pull/24)
+
+[Bhaskar's Code Review](https://github.com/bhskr44/capstone-project-two/pull/27)
 
 ## Getting Started
 
