@@ -9,6 +9,7 @@ const getLikesFirst = new Promise((resolve) => {
     resolve('done');
   }, 300);
 });
+
 getLikesFirst.then(() => {
   new Promise((resolve) => {
     loadApi();

@@ -10,11 +10,17 @@
 - Frameworks JEST
 - Technologies used Javascript webpack
 
-## Live Demo (if available)
+## Important Links
 
 [Live Demo Link](https://bhskr44.github.io/capstone-project-two/dist)
 
-[Watch Video on Youtube](https://youtu.be/F_uyYbQIPkA)
+[OverAll Website Video on Youtube](https://youtu.be/F_uyYbQIPkA)
+
+[Kanban Board](https://github.com/users/bhskr44/projects/6)
+
+[Robert's Video Presentation](https://drive.google.com/file/d/1AOAM8HScByekaXrytc2rthQEukjqqzwp/view?usp=sharing)
+
+[Bhaskar's Video Presentation](https://youtu.be/w4szCFomXFA)
 
 ## Getting Started
 
