@@ -26,7 +26,7 @@
 
 -Code Review
 
-[Bhaskar's Code Review](https://github.com/bhskr44/capstone-project-two/pull/24)
+[Robert's Code Review](https://github.com/bhskr44/capstone-project-two/pull/24)
 
 [Bhaskar's Code Review](https://github.com/bhskr44/capstone-project-two/pull/27)
 
